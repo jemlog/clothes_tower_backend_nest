@@ -1,4 +1,3 @@
-const SnakeNamingStrategy = require('typeorm-naming-strategies').SnakeNamingStrategy;
 module.exports = [
     {
         name: 'default',
@@ -6,10 +5,9 @@ module.exports = [
         host: process.env.DB_HOST || 'localhost',
         port: 3306,
         username: process.env.DB_USERNAME || 'root',
-        password: process.env.DB_PASSWORD || '71312m**0312',
+        password: process.env.DB_PASSWORD || '4321',
         database: 'nestjs_schema',
         synchronize: false,
-        namingStrategy: new SnakeNamingStrategy(),
         logging: true,
         entities: ['dist/src/**/*.entity.js'],
         migrationsTableName: 'se_migration_table',

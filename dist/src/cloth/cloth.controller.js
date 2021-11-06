@@ -18,10 +18,7 @@ const updateCloth_dto_1 = require("./dto/updateCloth.dto");
 const createCloth_dto_1 = require("./dto/createCloth.dto");
 const common_1 = require("@nestjs/common");
 const cloth_service_1 = require("./cloth.service");
-const roles_guard_1 = require("../middleware/roles.guard");
 const roles_decorator_1 = require("../decorator/roles.decorator");
-const logging_interceptor_1 = require("../interceptor/logging.interceptor");
-const transform_interceptor_1 = require("../interceptor/transform.interceptor");
 const cloth_entity_1 = require("./domain/cloth.entity");
 const dotenv = require("dotenv");
 const swagger_1 = require("@nestjs/swagger");
@@ -39,14 +36,6 @@ let ClothController = class ClothController {
     getMatchClothes(createClothDto) {
         return this.clothService.getMatchClothes(createClothDto);
     }
-    async uploadFile(request, response) {
-        try {
-            await this.clothService.uploadFile(request, response);
-        }
-        catch (error) {
-            return response.status(500).json({ message: 'fail' });
-        }
-    }
     createCloth(createClothDto) {
         return this.clothService.createCloth(createClothDto);
     }
@@ -63,7 +52,6 @@ __decorate([
         status: 200,
         description: 'Clothes are successfully found',
     }),
-    (0, common_1.UseInterceptors)(transform_interceptor_1.TransformInterceptor),
     openapi.ApiResponse({ status: 200, type: [require("./domain/cloth.entity").Cloth] }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -90,15 +78,6 @@ __decorate([
     __metadata("design:paramtypes", [createCloth_dto_1.CreateClothDto]),
     __metadata("design:returntype", Promise)
 ], ClothController.prototype, "getMatchClothes", null);
-__decorate([
-    (0, common_1.Post)('/upload'),
-    openapi.ApiResponse({ status: 201, type: Object }),
-    __param(0, (0, common_1.Req)()),
-    __param(1, (0, common_1.Res)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", Promise)
-], ClothController.prototype, "uploadFile", null);
 __decorate([
     (0, swagger_1.ApiCreatedResponse)({
         description: 'cloth is successfully created',
@@ -133,7 +112,6 @@ __decorate([
 ClothController = __decorate([
     (0, swagger_1.ApiTags)('cloth'),
     (0, common_1.Controller)('cloth'),
-    (0, common_1.UseInterceptors)(logging_interceptor_1.LoggingInterceptor),
     __metadata("design:paramtypes", [cloth_service_1.ClothService])
 ], ClothController);
 exports.ClothController = ClothController;

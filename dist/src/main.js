@@ -12,10 +12,10 @@ async function bootstrap() {
     app.useGlobalInterceptors(new common_1.ClassSerializerInterceptor(app.get(core_1.Reflector)));
     app.useGlobalPipes(new common_1.ValidationPipe({ transform: true }));
     const config = new swagger_1.DocumentBuilder()
-        .setTitle('Cats example')
-        .setDescription('The cats API description')
+        .setTitle('Cloth_Tower API')
+        .setDescription('Information system SE project Backend API')
         .setVersion('1.0')
-        .addTag('cats')
+        .addTag('clothes')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);

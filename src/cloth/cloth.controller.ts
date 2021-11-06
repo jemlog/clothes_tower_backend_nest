@@ -19,10 +19,8 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { ClothService } from './cloth.service';
-import { RolesGuard } from 'src/middleware/roles.guard';
+
 import { Roles } from 'src/decorator/roles.decorator';
-import { LoggingInterceptor } from 'src/interceptor/logging.interceptor';
-import { TransformInterceptor } from 'src/interceptor/transform.interceptor';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Cloth } from 'src/cloth/domain/cloth.entity';
 import * as multerS3 from 'multer-s3';
@@ -40,8 +38,6 @@ dotenv.config();
 
 @ApiTags('cloth')
 @Controller('cloth')
-// @UseGuards(RolesGuard)
-@UseInterceptors(LoggingInterceptor)
 export class ClothController {
   constructor(private readonly clothService: ClothService) {}
 
@@ -50,7 +46,6 @@ export class ClothController {
     status: 200,
     description: 'Clothes are successfully found',
   })
-  @UseInterceptors(TransformInterceptor)
   getAllClothes() {
     return this.clothService.getAllClothes();
   }
@@ -70,14 +65,14 @@ export class ClothController {
     return this.clothService.getMatchClothes(createClothDto);
   }
 
-  @Post('/upload')
-  async uploadFile(@Req() request, @Res() response) {
-    try {
-      await this.clothService.uploadFile(request, response);
-    } catch (error) {
-      return response.status(500).json({ message: 'fail' });
-    }
-  }
+  // @Post('/upload')
+  // async uploadFile(@Req() request, @Res() response) {
+  //   try {
+  //     await this.clothService.uploadFile(request, response);
+  //   } catch (error) {
+  //     return response.status(500).json({ message: 'fail' });
+  //   }
+  // }
 
   @ApiCreatedResponse({
     description: 'cloth is successfully created',

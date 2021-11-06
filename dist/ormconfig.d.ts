@@ -8,7 +8,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -32,7 +31,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -53,7 +51,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -74,7 +71,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -94,7 +90,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -115,7 +110,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -135,7 +129,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -155,7 +148,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -177,7 +169,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -198,7 +189,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -219,7 +209,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -240,7 +229,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -260,7 +248,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -280,7 +267,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -301,7 +287,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -322,7 +307,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -342,7 +326,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -363,7 +346,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -384,7 +366,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -405,7 +386,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -426,7 +406,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -446,7 +425,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -466,7 +444,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -487,7 +464,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -507,7 +483,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -528,7 +503,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -548,7 +522,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -569,7 +542,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -589,7 +561,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -610,7 +581,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -630,7 +600,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -651,7 +620,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -671,7 +639,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -691,7 +658,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -712,7 +678,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -732,7 +697,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -752,7 +716,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -773,7 +736,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -793,7 +755,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -813,7 +774,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -833,7 +793,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -853,7 +812,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -874,7 +832,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -894,7 +851,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -914,7 +870,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -934,7 +889,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -954,7 +908,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -974,7 +927,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -995,7 +947,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1015,7 +966,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1036,7 +986,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1056,7 +1005,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1076,7 +1024,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1096,7 +1043,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1116,7 +1062,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1137,7 +1082,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1157,7 +1101,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1177,7 +1120,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1197,7 +1139,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1217,7 +1158,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1237,7 +1177,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1258,7 +1197,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1278,7 +1216,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1299,7 +1236,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1319,7 +1255,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1339,7 +1274,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1360,7 +1294,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1380,7 +1313,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1400,7 +1332,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1421,7 +1352,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1441,7 +1371,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1462,7 +1391,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1482,7 +1410,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1503,7 +1430,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1524,7 +1450,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1546,7 +1471,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1567,7 +1491,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1588,7 +1511,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1608,7 +1530,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1630,7 +1551,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1660,7 +1580,6 @@ declare const _exports: {
         password: string;
         database: string;
         synchronize: boolean;
-        namingStrategy: SnakeNamingStrategy;
         logging: boolean;
         entities: string[];
         migrationsTableName: string;
@@ -1674,5 +1593,3 @@ declare const _exports: {
     };
 };
 export = _exports;
-import SnakeNamingStrategy_1 = require("typeorm-naming-strategies/snake-naming.strategy");
-import SnakeNamingStrategy = SnakeNamingStrategy_1.SnakeNamingStrategy;

@@ -12,20 +12,12 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const cloth_module_1 = require("./cloth/cloth.module");
-const logger_middleware_1 = require("./middleware/logger.middleware");
-const cloth_controller_1 = require("./cloth/cloth.controller");
 const config_1 = require("@nestjs/config");
 const Joi = require("joi");
 const dotenv = require("dotenv");
 const configuration_1 = require("./config/configuration");
 dotenv.config();
 let AppModule = class AppModule {
-    configure(consumer) {
-        consumer
-            .apply(logger_middleware_1.logger)
-            .exclude({ path: 'cloth', method: common_1.RequestMethod.POST })
-            .forRoutes(cloth_controller_1.ClothController);
-    }
 };
 AppModule = __decorate([
     (0, common_1.Module)({

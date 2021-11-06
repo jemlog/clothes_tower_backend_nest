@@ -17,42 +17,10 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const cloth_entity_1 = require("./domain/cloth.entity");
 const typeorm_2 = require("typeorm");
-const AWS = require("aws-sdk");
-const multer = require("multer");
-const multerS3 = require("multer-s3");
-const s3 = new AWS.S3();
-AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: 'ap-northeast-2',
-});
 let ClothService = class ClothService {
     constructor(clothRepository, connection) {
         this.clothRepository = clothRepository;
         this.connection = connection;
-        this.upload = multer({
-            storage: multerS3({
-                s3: s3,
-                bucket: process.env.AWS_S3_BUCKET_NAME,
-                key: function (request, file, cb) {
-                    cb(null, `${Date.now().toString()}-${file.originalname}`);
-                },
-            }),
-        }).single('upload');
-    }
-    async uploadFile(req, res) {
-        try {
-            this.upload(req, res, function (error) {
-                if (error) {
-                    console.log(error);
-                    return res.status(404).json('fail to upload image');
-                }
-                return res.status(201).json(req.file.location);
-            });
-        }
-        catch (error) {
-            console.log(error);
-        }
     }
     async getAllClothes() {
         const clothes = await this.clothRepository.find();
@@ -118,13 +86,6 @@ let ClothService = class ClothService {
         }
     }
 };
-__decorate([
-    __param(0, (0, common_1.Req)()),
-    __param(1, (0, common_1.Res)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", Promise)
-], ClothService.prototype, "uploadFile", null);
 ClothService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(cloth_entity_1.Cloth)),
