@@ -13,13 +13,12 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ClothController = void 0;
-const openapi = require("@nestjs/swagger");
 const updateCloth_dto_1 = require("./dto/updateCloth.dto");
 const createCloth_dto_1 = require("./dto/createCloth.dto");
 const common_1 = require("@nestjs/common");
 const cloth_service_1 = require("./cloth.service");
-const roles_decorator_1 = require("../decorator/roles.decorator");
-const cloth_entity_1 = require("./domain/cloth.entity");
+const roles_decorator_1 = require("src/decorator/roles.decorator");
+const cloth_entity_1 = require("src/cloth/domain/cloth.entity");
 const dotenv = require("dotenv");
 const swagger_1 = require("@nestjs/swagger");
 dotenv.config();
@@ -52,7 +51,6 @@ __decorate([
         status: 200,
         description: 'Clothes are successfully found',
     }),
-    openapi.ApiResponse({ status: 200, type: [require("./domain/cloth.entity").Cloth] }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
@@ -63,7 +61,6 @@ __decorate([
         status: 200,
         description: `cloth is successfully found`,
     }),
-    openapi.ApiResponse({ status: 200, type: require("./domain/cloth.entity").Cloth }),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
@@ -72,7 +69,6 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiCreatedResponse)({ description: 'success' }),
     (0, common_1.Post)('/search'),
-    openapi.ApiResponse({ status: 201, type: [require("./domain/cloth.entity").Cloth] }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [createCloth_dto_1.CreateClothDto]),
@@ -86,7 +82,6 @@ __decorate([
     (0, common_1.Post)(),
     (0, roles_decorator_1.Roles)('admin'),
     (0, common_1.UsePipes)(common_1.ValidationPipe),
-    openapi.ApiResponse({ status: 201, type: require("./dto/createCloth.dto").CreateClothDto }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [createCloth_dto_1.CreateClothDto]),
@@ -94,7 +89,6 @@ __decorate([
 ], ClothController.prototype, "createCloth", null);
 __decorate([
     (0, common_1.Put)(':id'),
-    openapi.ApiResponse({ status: 200 }),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -103,7 +97,6 @@ __decorate([
 ], ClothController.prototype, "updateCloth", null);
 __decorate([
     (0, common_1.Delete)(':id'),
-    openapi.ApiResponse({ status: 200 }),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),

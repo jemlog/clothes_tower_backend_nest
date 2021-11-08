@@ -4,4 +4,6 @@ export declare class Cloth {
     short_long: string;
     color: string;
     material: string;
+    createdAt: Date;
+    updatedAt: Date;
 }

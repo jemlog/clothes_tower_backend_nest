@@ -10,13 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cloth = void 0;
-const openapi = require("@nestjs/swagger");
 const swagger_1 = require("@nestjs/swagger");
 const typeorm_1 = require("typeorm");
 let Cloth = class Cloth {
-    static _OPENAPI_METADATA_FACTORY() {
-        return { id: { required: true, type: () => Number }, top_bottom: { required: true, type: () => String }, short_long: { required: true, type: () => String }, color: { required: true, type: () => String }, material: { required: true, type: () => String } };
-    }
 };
 __decorate([
     (0, swagger_1.ApiProperty)(),
@@ -43,6 +39,16 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Cloth.prototype, "material", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.CreateDateColumn)(),
+    __metadata("design:type", Date)
+], Cloth.prototype, "createdAt", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.UpdateDateColumn)(),
+    __metadata("design:type", Date)
+], Cloth.prototype, "updatedAt", void 0);
 Cloth = __decorate([
     (0, typeorm_1.Entity)()
 ], Cloth);

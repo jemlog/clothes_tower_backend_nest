@@ -28,4 +28,12 @@ export class Cloth {
   @ApiProperty()
   @Column()
   material: string;
+
+  @ApiProperty()
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @ApiProperty()
+  @UpdateDateColumn()
+  updatedAt: Date;
 }

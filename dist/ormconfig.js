@@ -7,7 +7,7 @@ module.exports = [
         username: process.env.DB_USERNAME || 'root',
         password: process.env.DB_PASSWORD || '4321',
         database: 'nestjs_schema',
-        synchronize: false,
+        synchronize: true,
         logging: true,
         entities: ['dist/src/**/*.entity.js'],
         migrationsTableName: 'se_migration_table',
