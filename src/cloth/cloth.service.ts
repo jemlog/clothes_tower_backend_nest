@@ -104,7 +104,7 @@ export class ClothService {
     try {
       const selectedClothes = await this.clothRepository.find({
         where: {
-          top_bottom: top_bottom ? top_bottom : Not('null'), // 특정 조건이 없을 경우 'null'이 아닌 값 모두 가져오는 로직
+          top_bottom: top_bottom ? top_bottom : Not('null'),
           short_long: short_long ? short_long : Not('null'),
           color: color ? color : Not('null'),
           material: material ? material : Not('null'),

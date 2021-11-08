@@ -18,7 +18,6 @@ const updateCloth_dto_1 = require("./dto/updateCloth.dto");
 const createCloth_dto_1 = require("./dto/createCloth.dto");
 const common_1 = require("@nestjs/common");
 const cloth_service_1 = require("./cloth.service");
-const roles_decorator_1 = require("../decorator/roles.decorator");
 const cloth_entity_1 = require("./domain/cloth.entity");
 const dotenv = require("dotenv");
 const swagger_1 = require("@nestjs/swagger");
@@ -52,6 +51,10 @@ __decorate([
         status: 200,
         description: 'Clothes are successfully found',
     }),
+    (0, swagger_1.ApiOperation)({
+        summary: '전체 옷 조회',
+        description: '보유하고 있는 모든 옷을 조회한다',
+    }),
     openapi.ApiResponse({ status: 200, type: [require("./domain/cloth.entity").Cloth] }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -63,6 +66,10 @@ __decorate([
         status: 200,
         description: `cloth is successfully found`,
     }),
+    (0, swagger_1.ApiOperation)({
+        summary: '특정 id로 옷 조회',
+        description: 'id를 입력하면 해당 아이디로 옷을 조회한다.',
+    }),
     openapi.ApiResponse({ status: 200, type: require("./domain/cloth.entity").Cloth }),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -72,6 +79,10 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiCreatedResponse)({ description: 'success' }),
     (0, common_1.Post)('/search'),
+    (0, swagger_1.ApiOperation)({
+        summary: '조건에 맞는 옷 검색',
+        description: '조건들을 json으로 받아와서 필터링후 조회',
+    }),
     openapi.ApiResponse({ status: 201, type: [require("./domain/cloth.entity").Cloth] }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -83,8 +94,11 @@ __decorate([
         description: 'cloth is successfully created',
         type: [cloth_entity_1.Cloth],
     }),
+    (0, swagger_1.ApiOperation)({
+        summary: '새 옷 추가',
+        description: '새로운 옷을 옷장에 집어넣는다.',
+    }),
     (0, common_1.Post)(),
-    (0, roles_decorator_1.Roles)('admin'),
     (0, common_1.UsePipes)(common_1.ValidationPipe),
     openapi.ApiResponse({ status: 201, type: require("./dto/createCloth.dto").CreateClothDto }),
     __param(0, (0, common_1.Body)()),
@@ -93,6 +107,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ClothController.prototype, "createCloth", null);
 __decorate([
+    (0, swagger_1.ApiOperation)({ summary: '옷 정보 수정' }),
     (0, common_1.Put)(':id'),
     openapi.ApiResponse({ status: 200 }),
     __param(0, (0, common_1.Param)('id')),
@@ -102,6 +117,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ClothController.prototype, "updateCloth", null);
 __decorate([
+    (0, swagger_1.ApiOperation)({ summary: '옷 정보 삭제' }),
     (0, common_1.Delete)(':id'),
     openapi.ApiResponse({ status: 200 }),
     __param(0, (0, common_1.Param)('id')),

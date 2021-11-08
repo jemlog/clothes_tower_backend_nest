@@ -15,7 +15,6 @@ const cloth_module_1 = require("./cloth/cloth.module");
 const config_1 = require("@nestjs/config");
 const Joi = require("joi");
 const dotenv = require("dotenv");
-const configuration_1 = require("./config/configuration");
 dotenv.config();
 let AppModule = class AppModule {
 };
@@ -29,7 +28,6 @@ AppModule = __decorate([
                 isGlobal: true,
                 envFilePath: process.env.NODE_ENV == 'dev' ? '.env.dev' : '.env.prod',
                 ignoreEnvFile: process.env.NODE_ENV === 'prod',
-                load: [configuration_1.default],
                 validationSchema: Joi.object({
                     DB_PASSWORD: Joi.string().required(),
                 }),
