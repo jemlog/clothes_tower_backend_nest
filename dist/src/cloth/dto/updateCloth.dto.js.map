@@ -1,1 +1,1 @@
-{"version":3,"file":"updateCloth.dto.js","sourceRoot":"","sources":["../../../../src/cloth/dto/updateCloth.dto.ts"],"names":[],"mappings":";;;;AAAA,uDAAmD;AACnD,uDAAmD;AAEnD,MAAa,cAAe,SAAQ,IAAA,0BAAW,EAAC,gCAAc,CAAC;;;;CAAG;AAAlE,wCAAkE"}
+{"version":3,"file":"updateCloth.dto.js","sourceRoot":"","sources":["../../../../src/cloth/dto/updateCloth.dto.ts"],"names":[],"mappings":";;;AAAA,uDAAmD;AACnD,uDAAmD;AAEnD,MAAa,cAAe,SAAQ,IAAA,0BAAW,EAAC,gCAAc,CAAC;CAAG;AAAlE,wCAAkE"}
