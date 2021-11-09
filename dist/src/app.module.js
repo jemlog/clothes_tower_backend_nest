@@ -15,6 +15,7 @@ const cloth_module_1 = require("./cloth/cloth.module");
 const config_1 = require("@nestjs/config");
 const Joi = require("joi");
 const dotenv = require("dotenv");
+const throttler_1 = require("@nestjs/throttler");
 dotenv.config();
 let AppModule = class AppModule {
 };
@@ -23,6 +24,10 @@ AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot(),
             cloth_module_1.ClothModule,
+            throttler_1.ThrottlerModule.forRoot({
+                ttl: 60,
+                limit: 30,
+            }),
             common_1.CacheModule.register(),
             config_1.ConfigModule.forRoot({
                 isGlobal: true,

@@ -13,6 +13,8 @@ const cloth_controller_1 = require("./cloth.controller");
 const cloth_service_1 = require("./cloth.service");
 const cloth_entity_1 = require("./domain/cloth.entity");
 const config_1 = require("@nestjs/config");
+const core_1 = require("@nestjs/core");
+const throttler_1 = require("@nestjs/throttler");
 let ClothModule = class ClothModule {
 };
 ClothModule = __decorate([
@@ -20,7 +22,13 @@ ClothModule = __decorate([
         imports: [typeorm_1.TypeOrmModule.forFeature([cloth_entity_1.Cloth]), config_1.ConfigModule],
         exports: [typeorm_1.TypeOrmModule],
         controllers: [cloth_controller_1.ClothController],
-        providers: [cloth_service_1.ClothService],
+        providers: [
+            cloth_service_1.ClothService,
+            {
+                provide: core_1.APP_GUARD,
+                useClass: throttler_1.ThrottlerGuard,
+            },
+        ],
     })
 ], ClothModule);
 exports.ClothModule = ClothModule;

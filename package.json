@@ -27,6 +27,7 @@
     "@nestjs/mapped-types": "^1.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/swagger": "^5.1.4",
+    "@nestjs/throttler": "^2.0.0",
     "@nestjs/typeorm": "^8.0.2",
     "aws-sdk": "^2.1019.0",
     "cache-manager": "^3.4.4",

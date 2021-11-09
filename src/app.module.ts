@@ -14,11 +14,16 @@ import { ClothController } from './cloth/cloth.controller';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 import * as dotenv from 'dotenv';
+import { ThrottlerModule } from '@nestjs/throttler';
 dotenv.config();
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     ClothModule,
+    ThrottlerModule.forRoot({
+      ttl: 60,
+      limit: 30,
+    }),
     CacheModule.register(),
     ConfigModule.forRoot({
       isGlobal: true,
