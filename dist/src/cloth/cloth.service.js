@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ClothService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const cloth_entity_1 = require("./domain/cloth.entity");
+const cloth_entity_1 = require("src/cloth/domain/cloth.entity");
 const typeorm_2 = require("typeorm");
 const AWS = require("aws-sdk");
 AWS.config.update({

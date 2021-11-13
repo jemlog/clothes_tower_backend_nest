@@ -22,7 +22,7 @@ dotenv.config();
     ClothModule,
     ThrottlerModule.forRoot({
       ttl: 60,
-      limit: 30,
+      limit: 100,
     }),
     CacheModule.register(),
     ConfigModule.forRoot({

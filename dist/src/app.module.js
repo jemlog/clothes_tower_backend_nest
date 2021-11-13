@@ -26,7 +26,7 @@ AppModule = __decorate([
             cloth_module_1.ClothModule,
             throttler_1.ThrottlerModule.forRoot({
                 ttl: 60,
-                limit: 30,
+                limit: 100,
             }),
             common_1.CacheModule.register(),
             config_1.ConfigModule.forRoot({
