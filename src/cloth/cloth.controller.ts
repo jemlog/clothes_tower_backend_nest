@@ -22,9 +22,9 @@ import { ClothService } from './cloth.service';
 
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Cloth } from 'src/cloth/domain/cloth.entity';
-import * as multerS3 from 'multer-s3';
 import * as AWS from 'aws-sdk';
-import { S3 } from 'aws-sdk';
+import * as multer from 'multer';
+import * as multerS3 from 'multer-s3';
 import { request } from 'http';
 import * as dotenv from 'dotenv';
 import {
@@ -95,9 +95,10 @@ export class ClothController {
     description: '새로운 옷을 옷장에 집어넣는다.',
   })
   @Post()
+  @UseInterceptors(FileInterceptor('file'))
   @UsePipes(ValidationPipe)
-  createCloth(@Body() createClothDto: CreateClothDto) {
-    return this.clothService.createCloth(createClothDto);
+  createCloth(@UploadedFile() file, @Body() createClothDto: CreateClothDto) {
+    return this.clothService.createCloth(createClothDto, file);
   }
 
   @ApiOperation({ summary: '옷 정보 수정' })

@@ -6,4 +6,5 @@ export declare class Cloth {
     material: string;
     createdAt: Date;
     updatedAt: Date;
+    image: string;
 }

@@ -17,10 +17,32 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const cloth_entity_1 = require("./domain/cloth.entity");
 const typeorm_2 = require("typeorm");
+const AWS = require("aws-sdk");
+AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: 'ap-northeast-2',
+});
 let ClothService = class ClothService {
     constructor(clothRepository, connection) {
         this.clothRepository = clothRepository;
         this.connection = connection;
+    }
+    async uploadS3(file, bucket, name) {
+        const s3 = new AWS.S3();
+        const params = {
+            Bucket: bucket,
+            Key: String(name),
+            Body: file,
+        };
+        return new Promise((resolve, reject) => {
+            s3.upload(params, (err, data) => {
+                if (err) {
+                    reject(err.message);
+                }
+                resolve(data);
+            });
+        });
     }
     async getAllClothes() {
         const clothes = await this.clothRepository.find();
@@ -33,27 +55,26 @@ let ClothService = class ClothService {
         }
         return result;
     }
-    async createCloth(cloth) {
+    async createCloth(cloth, file) {
         const { top_bottom, short_long, color, material } = cloth;
-        const queryRunner = this.connection.createQueryRunner();
-        await queryRunner.connect();
-        await queryRunner.startTransaction();
+        const { originalname } = file;
+        const bucketS3 = process.env.AWS_S3_BUCKET_NAME;
         try {
+            const file2 = await this.uploadS3(file.buffer, bucketS3, originalname);
+            console.log('=====================');
+            console.log(file2.Location);
             const newCloth = this.clothRepository.create({
                 top_bottom,
                 short_long,
                 color,
                 material,
+                image: file2.Location,
             });
-            const cloth = await queryRunner.manager.save(newCloth);
-            await queryRunner.commitTransaction();
+            const cloth = await this.clothRepository.save(newCloth);
+            return cloth;
         }
         catch (err) {
-            await queryRunner.rollbackTransaction();
-        }
-        finally {
-            await queryRunner.release();
-            return cloth;
+            console.log(err);
         }
     }
     async updateCloth(id, user) {

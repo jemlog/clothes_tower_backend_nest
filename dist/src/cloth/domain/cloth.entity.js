@@ -15,7 +15,7 @@ const swagger_1 = require("@nestjs/swagger");
 const typeorm_1 = require("typeorm");
 let Cloth = class Cloth {
     static _OPENAPI_METADATA_FACTORY() {
-        return { id: { required: true, type: () => Number }, top_bottom: { required: true, type: () => String }, short_long: { required: true, type: () => String }, color: { required: true, type: () => String }, material: { required: true, type: () => String }, createdAt: { required: true, type: () => Date }, updatedAt: { required: true, type: () => Date } };
+        return { id: { required: true, type: () => Number }, top_bottom: { required: true, type: () => String }, short_long: { required: true, type: () => String }, color: { required: true, type: () => String }, material: { required: true, type: () => String }, createdAt: { required: true, type: () => Date }, updatedAt: { required: true, type: () => Date }, image: { required: true, type: () => String } };
     }
 };
 __decorate([
@@ -53,6 +53,11 @@ __decorate([
     (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
 ], Cloth.prototype, "updatedAt", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Cloth.prototype, "image", void 0);
 Cloth = __decorate([
     (0, typeorm_1.Entity)()
 ], Cloth);

@@ -8,7 +8,7 @@ export declare class ClothController {
     getAllClothes(): Promise<Cloth[]>;
     getClothById(id: string): Promise<Cloth>;
     getMatchClothes(createClothDto: CreateClothDto): Promise<Cloth[]>;
-    createCloth(createClothDto: CreateClothDto): Promise<CreateClothDto>;
+    createCloth(file: any, createClothDto: CreateClothDto): Promise<Cloth>;
     updateCloth(id: string, updateClothDto: UpdateClothDto): Promise<import("typeorm").UpdateResult>;
     deleteCloth(id: string): Promise<import("typeorm").DeleteResult>;
 }

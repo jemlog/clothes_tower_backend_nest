@@ -9,12 +9,11 @@ import * as AWS from 'aws-sdk';
 import * as multer from 'multer';
 import * as multerS3 from 'multer-s3';
 
-// const s3 = new AWS.S3();
-// AWS.config.update({
-//   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-//   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-//   region: 'ap-northeast-2',
-// });
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: 'ap-northeast-2',
+});
 
 @Injectable()
 export class ClothService {
@@ -24,29 +23,22 @@ export class ClothService {
     private connection: Connection,
   ) {}
 
-  // async uploadFile(@Req() req, @Res() res) {
-  //   try {
-  //     this.upload(req, res, function (error) {
-  //       if (error) {
-  //         console.log(error);
-  //         return res.status(404).json('fail to upload image');
-  //       }
-  //       return res.status(201).json(req.file.location);
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
-  // upload = multer({
-  //   storage: multerS3({
-  //     s3: s3,
-  //     bucket: process.env.AWS_S3_BUCKET_NAME,
-  //     key: function (request, file, cb) {
-  //       cb(null, `${Date.now().toString()}-${file.originalname}`);
-  //     },
-  //   }),
-  // }).single('upload');
+  async uploadS3(file, bucket, name) {
+    const s3 = new AWS.S3();
+    const params = {
+      Bucket: bucket,
+      Key: String(name),
+      Body: file,
+    };
+    return new Promise((resolve, reject) => {
+      s3.upload(params, (err, data) => {
+        if (err) {
+          reject(err.message);
+        }
+        resolve(data);
+      });
+    });
+  }
 
   async getAllClothes(): Promise<Cloth[]> {
     // Find all clothes
@@ -63,28 +55,30 @@ export class ClothService {
     return result;
   }
 
-  async createCloth(cloth: CreateClothDto) {
+  async createCloth(cloth: CreateClothDto, file) {
     // create new clothes
     const { top_bottom, short_long, color, material } = cloth;
+    const { originalname } = file;
+    const bucketS3 = process.env.AWS_S3_BUCKET_NAME;
 
-    const queryRunner = this.connection.createQueryRunner();
-
-    await queryRunner.connect();
-    await queryRunner.startTransaction();
     try {
+      const file2: any = await this.uploadS3(
+        file.buffer,
+        bucketS3,
+        originalname,
+      );
+
       const newCloth = this.clothRepository.create({
         top_bottom,
         short_long,
         color,
         material,
+        image: file2.Location,
       });
-      const cloth = await queryRunner.manager.save(newCloth);
-      await queryRunner.commitTransaction();
-    } catch (err) {
-      await queryRunner.rollbackTransaction();
-    } finally {
-      await queryRunner.release();
+      const cloth = await this.clothRepository.save(newCloth);
       return cloth;
+    } catch (err) {
+      console.log(err);
     }
   }
 

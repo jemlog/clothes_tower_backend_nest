@@ -36,4 +36,8 @@ export class Cloth {
   @ApiProperty()
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @ApiProperty()
+  @Column()
+  image: string;
 }
