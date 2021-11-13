@@ -61,8 +61,6 @@ let ClothService = class ClothService {
         const bucketS3 = process.env.AWS_S3_BUCKET_NAME;
         try {
             const file2 = await this.uploadS3(file.buffer, bucketS3, originalname);
-            console.log('=====================');
-            console.log(file2.Location);
             const newCloth = this.clothRepository.create({
                 top_bottom,
                 short_long,
