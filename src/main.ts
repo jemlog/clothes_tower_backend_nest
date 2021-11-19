@@ -11,6 +11,8 @@ async function bootstrap() {
   app.use(helmet({ contentSecurityPolicy: false }));
   app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
+
+  // Swagger 문서화를 설정하는 로직
   const config = new DocumentBuilder()
     .setTitle('Cloth_Tower API')
     .setDescription('Information system SE project Backend API')

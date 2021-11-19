@@ -21,8 +21,8 @@ dotenv.config();
     TypeOrmModule.forRoot(),
     ClothModule,
     ThrottlerModule.forRoot({
-      ttl: 60,
-      limit: 100,
+      ttl: 30,
+      limit: 20,
     }),
     CacheModule.register(),
     ConfigModule.forRoot({

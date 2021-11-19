@@ -9,6 +9,7 @@ import * as AWS from 'aws-sdk';
 import * as multer from 'multer';
 import * as multerS3 from 'multer-s3';
 
+// AWS S3 설정
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -23,6 +24,7 @@ export class ClothService {
     private connection: Connection,
   ) {}
 
+  // 이미지 파일을 받아오면 S3의 버켓으로 전송하는 로직
   async uploadS3(file, bucket, name) {
     const s3 = new AWS.S3();
     const params = {
@@ -40,14 +42,14 @@ export class ClothService {
     });
   }
 
+  // 옷장 안의 모든 옷 조회
   async getAllClothes(): Promise<Cloth[]> {
-    // Find all clothes
     const clothes = await this.clothRepository.find();
     return clothes;
   }
 
+  // 옷 고유 아이디로 조회
   async getClothById(id: string): Promise<Cloth> {
-    // Find clothes by id
     const result = await this.clothRepository.findOne(id);
     if (!result) {
       throw new NotFoundException(`id ${id} not found`);
@@ -55,19 +57,21 @@ export class ClothService {
     return result;
   }
 
+  // 새로운 옷을 옷장에 추가
   async createCloth(cloth: CreateClothDto, file) {
-    // create new clothes
     const { top_bottom, short_long, color, material } = cloth;
     const { originalname } = file;
     const bucketS3 = process.env.AWS_S3_BUCKET_NAME;
 
     try {
+      // 클라이언트에서 보낸 formdata 내부의 이미지 파일을 가져오는 로직
       const file2: any = await this.uploadS3(
         file.buffer,
         bucketS3,
         originalname,
       );
 
+      // 이미지 파일 외의 key ,value 쌍을 가져오는 로직
       const newCloth = this.clothRepository.create({
         top_bottom,
         short_long,
@@ -82,18 +86,20 @@ export class ClothService {
     }
   }
 
+  // 기존의 옷 정보 수정
   async updateCloth(id: string, user: UpdateClothDto) {
     const result = await this.clothRepository.update(id, user);
     return result;
   }
 
+  // 기존 옷 삭제
   async deleteCloth(id: string) {
     const result = await this.clothRepository.delete(id);
     return result;
   }
 
+  // 원하는 조건을 검색해서 옷 정보를 조회
   async getMatchClothes(cloth: CreateClothDto) {
-    // search clothes by condition
     const { top_bottom, short_long, color, material } = cloth;
     try {
       const selectedClothes = await this.clothRepository.find({

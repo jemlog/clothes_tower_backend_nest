@@ -77,22 +77,14 @@ export class ClothController {
     return this.clothService.getMatchClothes(createClothDto);
   }
 
-  // @Post('/upload')
-  // async uploadFile(@Req() request, @Res() response) {
-  //   try {
-  //     await this.clothService.uploadFile(request, response);
-  //   } catch (error) {
-  //     return response.status(500).json({ message: 'fail' });
-  //   }
-  // }
-
   @ApiCreatedResponse({
     description: 'cloth is successfully created',
     type: [Cloth],
   })
   @ApiOperation({
     summary: '새 옷 추가',
-    description: '새로운 옷을 옷장에 집어넣는다.',
+    description:
+      '새로운 옷을 옷장에 집어넣는다. 이미지 파일 받아온 후 AWS S3에 저장',
   })
   @Post()
   @UseInterceptors(FileInterceptor('file'))
