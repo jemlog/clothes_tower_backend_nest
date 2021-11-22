@@ -12,5 +12,5 @@ export declare class ClothService {
     createCloth(cloth: CreateClothDto, file: any): Promise<Cloth>;
     updateCloth(id: string, user: UpdateClothDto): Promise<import("typeorm").UpdateResult>;
     deleteCloth(id: string): Promise<import("typeorm").DeleteResult>;
-    getMatchClothes(cloth: CreateClothDto): Promise<Cloth[]>;
+    getMatchClothes(query: any): Promise<Cloth[]>;
 }

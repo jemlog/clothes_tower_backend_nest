@@ -9,6 +9,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
   Req,
   Res,
   SetMetadata,
@@ -54,6 +55,17 @@ export class ClothController {
     return this.clothService.getAllClothes();
   }
 
+  @ApiCreatedResponse({ description: 'success' })
+  @Get('/search')
+  @ApiOperation({
+    summary: '조건에 맞는 옷 검색',
+    description: '조건들을 json으로 받아와서 필터링후 조회',
+  })
+  getMatchClothes(@Query() myQuery): Promise<Cloth[]> {
+    console.log('hello my name is jemin');
+    return this.clothService.getMatchClothes(myQuery);
+  }
+
   @Get(':id')
   @ApiResponse({
     status: 200,
@@ -65,16 +77,6 @@ export class ClothController {
   })
   getClothById(@Param('id') id: string) {
     return this.clothService.getClothById(id);
-  }
-
-  @ApiCreatedResponse({ description: 'success' })
-  @Post('/search')
-  @ApiOperation({
-    summary: '조건에 맞는 옷 검색',
-    description: '조건들을 json으로 받아와서 필터링후 조회',
-  })
-  getMatchClothes(@Body() createClothDto: CreateClothDto): Promise<Cloth[]> {
-    return this.clothService.getMatchClothes(createClothDto);
   }
 
   @ApiCreatedResponse({

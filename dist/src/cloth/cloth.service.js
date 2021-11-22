@@ -83,8 +83,9 @@ let ClothService = class ClothService {
         const result = await this.clothRepository.delete(id);
         return result;
     }
-    async getMatchClothes(cloth) {
-        const { top_bottom, short_long, color, material } = cloth;
+    async getMatchClothes(query) {
+        const { top_bottom, short_long, color, material } = query;
+        console.log('-----');
         try {
             const selectedClothes = await this.clothRepository.find({
                 where: {

@@ -15,6 +15,7 @@ import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 import * as dotenv from 'dotenv';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { AnswerWeatherModule } from './answer-weather/answer-weather.module';
 dotenv.config();
 @Module({
   imports: [
@@ -34,6 +35,7 @@ dotenv.config();
         DB_PASSWORD: Joi.string().required(),
       }),
     }),
+    AnswerWeatherModule,
   ],
   controllers: [AppController],
   providers: [AppService],

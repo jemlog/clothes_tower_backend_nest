@@ -99,8 +99,9 @@ export class ClothService {
   }
 
   // 원하는 조건을 검색해서 옷 정보를 조회
-  async getMatchClothes(cloth: CreateClothDto) {
-    const { top_bottom, short_long, color, material } = cloth;
+  async getMatchClothes(query: any) {
+    const { top_bottom, short_long, color, material } = query;
+    console.log('-----');
     try {
       const selectedClothes = await this.clothRepository.find({
         where: {

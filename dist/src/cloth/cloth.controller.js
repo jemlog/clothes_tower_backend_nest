@@ -30,11 +30,12 @@ let ClothController = class ClothController {
     getAllClothes() {
         return this.clothService.getAllClothes();
     }
+    getMatchClothes(myQuery) {
+        console.log('hello my name is jemin');
+        return this.clothService.getMatchClothes(myQuery);
+    }
     getClothById(id) {
         return this.clothService.getClothById(id);
-    }
-    getMatchClothes(createClothDto) {
-        return this.clothService.getMatchClothes(createClothDto);
     }
     createCloth(file, createClothDto) {
         return this.clothService.createCloth(createClothDto, file);
@@ -62,6 +63,19 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ClothController.prototype, "getAllClothes", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({ description: 'success' }),
+    (0, common_1.Get)('/search'),
+    (0, swagger_1.ApiOperation)({
+        summary: '조건에 맞는 옷 검색',
+        description: '조건들을 json으로 받아와서 필터링후 조회',
+    }),
+    openapi.ApiResponse({ status: 200, type: [require("./domain/cloth.entity").Cloth] }),
+    __param(0, (0, common_1.Query)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ClothController.prototype, "getMatchClothes", null);
+__decorate([
     (0, common_1.Get)(':id'),
     (0, swagger_1.ApiResponse)({
         status: 200,
@@ -77,19 +91,6 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ClothController.prototype, "getClothById", null);
-__decorate([
-    (0, swagger_1.ApiCreatedResponse)({ description: 'success' }),
-    (0, common_1.Post)('/search'),
-    (0, swagger_1.ApiOperation)({
-        summary: '조건에 맞는 옷 검색',
-        description: '조건들을 json으로 받아와서 필터링후 조회',
-    }),
-    openapi.ApiResponse({ status: 201, type: [require("./domain/cloth.entity").Cloth] }),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [createCloth_dto_1.CreateClothDto]),
-    __metadata("design:returntype", Promise)
-], ClothController.prototype, "getMatchClothes", null);
 __decorate([
     (0, swagger_1.ApiCreatedResponse)({
         description: 'cloth is successfully created',

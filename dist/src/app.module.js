@@ -16,6 +16,7 @@ const config_1 = require("@nestjs/config");
 const Joi = require("joi");
 const dotenv = require("dotenv");
 const throttler_1 = require("@nestjs/throttler");
+const answer_weather_module_1 = require("./answer-weather/answer-weather.module");
 dotenv.config();
 let AppModule = class AppModule {
 };
@@ -37,6 +38,7 @@ AppModule = __decorate([
                     DB_PASSWORD: Joi.string().required(),
                 }),
             }),
+            answer_weather_module_1.AnswerWeatherModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
