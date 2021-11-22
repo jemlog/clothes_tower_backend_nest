@@ -97,7 +97,7 @@ __decorate([
     }),
     (0, swagger_1.ApiOperation)({
         summary: '새 옷 추가',
-        description: '새로운 옷을 옷장에 집어넣는다.',
+        description: '새로운 옷을 옷장에 집어넣는다. 이미지 파일 받아온 후 AWS S3에 저장',
     }),
     (0, common_1.Post)(),
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file')),
