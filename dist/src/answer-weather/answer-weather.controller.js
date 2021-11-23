@@ -24,7 +24,7 @@ let AnswerWeatherController = class AnswerWeatherController {
         return 'nugu speacker backend proxy testing';
     }
     getParameters(body) {
-        console.log(body);
+        console.log(body.action.parameters.date);
         return 'OK';
     }
 };
