@@ -25,7 +25,7 @@ let AnswerWeatherController = class AnswerWeatherController {
     }
     getParameters(body) {
         console.log(body);
-        return body;
+        return 'OK';
     }
 };
 __decorate([
@@ -37,7 +37,7 @@ __decorate([
 ], AnswerWeatherController.prototype, "test", null);
 __decorate([
     (0, common_1.Post)('/'),
-    openapi.ApiResponse({ status: 201, type: Object }),
+    openapi.ApiResponse({ status: 201, type: String }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

@@ -3,5 +3,5 @@ export declare class AnswerWeatherController {
     private readonly answerWeatherService;
     constructor(answerWeatherService: AnswerWeatherService);
     test(): string;
-    getParameters(body: any): any;
+    getParameters(body: any): string;
 }

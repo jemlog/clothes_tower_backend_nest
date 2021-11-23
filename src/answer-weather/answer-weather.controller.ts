@@ -14,6 +14,6 @@ export class AnswerWeatherController {
   @Post('/')
   getParameters(@Body() body) {
     console.log(body);
-    return body;
+    return 'OK';
   }
 }
