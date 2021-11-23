@@ -32,7 +32,7 @@ let AnswerWeatherController = class AnswerWeatherController {
         return JSON.stringify(response);
     }
     getParameters(body) {
-        console.log(body);
+        console.log(body.action.parameters.date);
         const response = {
             version: '2.0',
             resultCode: 'OK',

@@ -21,7 +21,7 @@ export class AnswerWeatherController {
 
   @Post('/')
   getParameters(@Body() body) {
-    console.log(body);
+    console.log(body.action.parameters.date);
 
     const response = {
       version: '2.0',
