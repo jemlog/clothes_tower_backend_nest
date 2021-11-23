@@ -6,10 +6,6 @@ export declare class AnswerWeatherController {
         version: string;
         resultCode: string;
         output: {
-            date: {
-                type: string;
-                value: string;
-            };
             isValidTime: string;
         };
     };
@@ -17,10 +13,6 @@ export declare class AnswerWeatherController {
         version: string;
         resultCode: string;
         output: {
-            date: {
-                type: string;
-                value: string;
-            };
             isValidTime: string;
         };
     };
