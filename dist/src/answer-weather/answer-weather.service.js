@@ -6,17 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AnswerWeatherModule = void 0;
+exports.AnswerWeatherService = void 0;
 const common_1 = require("@nestjs/common");
-const answer_weather_controller_1 = require("./answer-weather.controller");
-const answer_weather_service_1 = require("./answer-weather.service");
-let AnswerWeatherModule = class AnswerWeatherModule {
+let AnswerWeatherService = class AnswerWeatherService {
 };
-AnswerWeatherModule = __decorate([
-    (0, common_1.Module)({
-        controllers: [answer_weather_controller_1.AnswerWeatherController],
-        providers: [answer_weather_service_1.AnswerWeatherService]
-    })
-], AnswerWeatherModule);
-exports.AnswerWeatherModule = AnswerWeatherModule;
-//# sourceMappingURL=answer-weather.module.js.map
+AnswerWeatherService = __decorate([
+    (0, common_1.Injectable)()
+], AnswerWeatherService);
+exports.AnswerWeatherService = AnswerWeatherService;
+//# sourceMappingURL=answer-weather.service.js.map
