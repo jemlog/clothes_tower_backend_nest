@@ -7,6 +7,7 @@ export declare class AnswerWeatherController {
         version: string;
         resultCode: string;
         output: {
+            date: string;
             message: string;
         };
         directives: any[];

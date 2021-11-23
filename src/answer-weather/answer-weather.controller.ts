@@ -35,7 +35,8 @@ export class AnswerWeatherController {
       version: '2.0',
       resultCode: 'OK',
       output: {
-        message: '응답완료',
+        date: '오늘',
+        message: 'result',
       },
       directives: [],
     };
