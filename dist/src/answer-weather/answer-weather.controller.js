@@ -25,7 +25,34 @@ let AnswerWeatherController = class AnswerWeatherController {
     }
     getParameters(body) {
         console.log(body.action.parameters.date);
-        return 'OK';
+        const response = {
+            version: '2.0',
+            resultCode: 'OK',
+            output: {
+                datetime: '오늘',
+                date: 'YESTERDAY',
+                isValidTime: '응답완료',
+            },
+            directives: [
+                {
+                    type: 'AudioPlayer.Play',
+                    audioItem: {
+                        stream: {
+                            url: '{{STRING}}',
+                            offsetInMilliseconds: 1000,
+                            progressReport: {
+                                progressReportDelayInMilliseconds: 1000,
+                                progressReportIntervalInMilliseconds: 1000,
+                            },
+                            token: '{{STRING}}',
+                            expectedPreviousToken: '{{STRING}}',
+                        },
+                        metadata: {},
+                    },
+                },
+            ],
+        };
+        return response;
     }
 };
 __decorate([
@@ -37,7 +64,7 @@ __decorate([
 ], AnswerWeatherController.prototype, "test", null);
 __decorate([
     (0, common_1.Post)('/'),
-    openapi.ApiResponse({ status: 201, type: String }),
+    openapi.ApiResponse({ status: 201 }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
