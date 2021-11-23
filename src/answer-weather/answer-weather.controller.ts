@@ -12,11 +12,11 @@ export class AnswerWeatherController {
       version: '2.0',
       resultCode: 'OK',
       output: {
-        // date: { type: 'BID_DT_DAY', value: 'YESTERDAY' },
-        isValidTime: '응답완료',
+        message: '응답완료',
       },
+      directives: [],
     };
-    return response;
+    return JSON.stringify(response);
   }
 
   @Post('/')
@@ -27,10 +27,10 @@ export class AnswerWeatherController {
       version: '2.0',
       resultCode: 'OK',
       output: {
-        // date: { type: 'BID_DT_DAY', value: 'YESTERDAY' },
-        isValidTime: '응답완료',
+        message: '응답완료',
       },
+      directives: [],
     };
-    return response;
+    return JSON.stringify(response);
   }
 }

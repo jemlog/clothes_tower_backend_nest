@@ -25,10 +25,11 @@ let AnswerWeatherController = class AnswerWeatherController {
             version: '2.0',
             resultCode: 'OK',
             output: {
-                isValidTime: '응답완료',
+                message: '응답완료',
             },
+            directives: [],
         };
-        return response;
+        return JSON.stringify(response);
     }
     getParameters(body) {
         console.log(body);
@@ -36,22 +37,23 @@ let AnswerWeatherController = class AnswerWeatherController {
             version: '2.0',
             resultCode: 'OK',
             output: {
-                isValidTime: '응답완료',
+                message: '응답완료',
             },
+            directives: [],
         };
-        return response;
+        return JSON.stringify(response);
     }
 };
 __decorate([
     (0, common_1.Get)('/'),
-    openapi.ApiResponse({ status: 200 }),
+    openapi.ApiResponse({ status: 200, type: String }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], AnswerWeatherController.prototype, "test", null);
 __decorate([
     (0, common_1.Post)('/'),
-    openapi.ApiResponse({ status: 201 }),
+    openapi.ApiResponse({ status: 201, type: String }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
