@@ -29,28 +29,9 @@ let AnswerWeatherController = class AnswerWeatherController {
             version: '2.0',
             resultCode: 'OK',
             output: {
-                datetime: '오늘',
                 date: 'YESTERDAY',
                 isValidTime: '응답완료',
             },
-            directives: [
-                {
-                    type: 'AudioPlayer.Play',
-                    audioItem: {
-                        stream: {
-                            url: '{{STRING}}',
-                            offsetInMilliseconds: 1000,
-                            progressReport: {
-                                progressReportDelayInMilliseconds: 1000,
-                                progressReportIntervalInMilliseconds: 1000,
-                            },
-                            token: '{{STRING}}',
-                            expectedPreviousToken: '{{STRING}}',
-                        },
-                        metadata: {},
-                    },
-                },
-            ],
         };
         return response;
     }

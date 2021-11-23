@@ -7,25 +7,8 @@ export declare class AnswerWeatherController {
         version: string;
         resultCode: string;
         output: {
-            datetime: string;
             date: string;
             isValidTime: string;
         };
-        directives: {
-            type: string;
-            audioItem: {
-                stream: {
-                    url: string;
-                    offsetInMilliseconds: number;
-                    progressReport: {
-                        progressReportDelayInMilliseconds: number;
-                        progressReportIntervalInMilliseconds: number;
-                    };
-                    token: string;
-                    expectedPreviousToken: string;
-                };
-                metadata: {};
-            };
-        }[];
     };
 }
