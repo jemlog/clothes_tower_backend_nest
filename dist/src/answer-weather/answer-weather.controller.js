@@ -37,7 +37,6 @@ let AnswerWeatherController = class AnswerWeatherController {
             version: '2.0',
             resultCode: 'OK',
             output: {
-                date: '오늘',
                 message: 'result',
             },
         };
