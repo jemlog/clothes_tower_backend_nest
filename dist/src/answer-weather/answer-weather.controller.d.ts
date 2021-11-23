@@ -10,6 +10,5 @@ export declare class AnswerWeatherController {
             date: string;
             message: string;
         };
-        directives: any[];
     };
 }
