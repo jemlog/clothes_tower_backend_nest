@@ -37,18 +37,11 @@ let AnswerWeatherController = class AnswerWeatherController {
             version: '2.0',
             resultCode: 'OK',
             output: {
-                message: '응답완료',
-            },
-            directives: [],
-        };
-        return {
-            version: '2.0',
-            resultCode: 'OK',
-            output: {
                 date: '오늘',
                 message: 'result',
             },
         };
+        return JSON.stringify(response);
     }
 };
 __decorate([
@@ -60,7 +53,7 @@ __decorate([
 ], AnswerWeatherController.prototype, "test", null);
 __decorate([
     (0, common_1.Post)('/'),
-    openapi.ApiResponse({ status: 201 }),
+    openapi.ApiResponse({ status: 201, type: String }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
