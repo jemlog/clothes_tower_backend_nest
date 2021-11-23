@@ -7,7 +7,10 @@ export declare class AnswerWeatherController {
         version: string;
         resultCode: string;
         output: {
-            date: string;
+            date: {
+                type: string;
+                value: string;
+            };
             isValidTime: string;
         };
     };

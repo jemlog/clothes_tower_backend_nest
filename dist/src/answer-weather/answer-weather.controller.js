@@ -29,7 +29,7 @@ let AnswerWeatherController = class AnswerWeatherController {
             version: '2.0',
             resultCode: 'OK',
             output: {
-                date: 'YESTERDAY',
+                date: { type: 'BID_DT_DAY', value: 'YESTERDAY' },
                 isValidTime: '응답완료',
             },
         };
