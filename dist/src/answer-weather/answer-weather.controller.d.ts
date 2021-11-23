@@ -3,5 +3,12 @@ export declare class AnswerWeatherController {
     private readonly answerWeatherService;
     constructor(answerWeatherService: AnswerWeatherService);
     test(): string;
-    getParameters(body: any): string;
+    getParameters(body: any): {
+        version: string;
+        resultCode: string;
+        output: {
+            message: string;
+        };
+        directives: any[];
+    };
 }

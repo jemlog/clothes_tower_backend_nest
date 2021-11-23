@@ -31,6 +31,13 @@ export class AnswerWeatherController {
       },
       directives: [],
     };
-    return JSON.stringify(response);
+    return {
+      version: '2.0',
+      resultCode: 'OK',
+      output: {
+        message: '응답완료',
+      },
+      directives: [],
+    };
   }
 }
