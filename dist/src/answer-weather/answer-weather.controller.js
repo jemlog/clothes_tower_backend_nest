@@ -21,10 +21,18 @@ let AnswerWeatherController = class AnswerWeatherController {
         this.answerWeatherService = answerWeatherService;
     }
     test() {
-        return 'nugu speacker backend proxy testing';
+        const response = {
+            version: '2.0',
+            resultCode: 'OK',
+            output: {
+                date: { type: 'BID_DT_DAY', value: 'YESTERDAY' },
+                isValidTime: '응답완료',
+            },
+        };
+        return response;
     }
     getParameters(body) {
-        console.log(body.action.parameters.date);
+        console.log(body);
         const response = {
             version: '2.0',
             resultCode: 'OK',
@@ -37,8 +45,8 @@ let AnswerWeatherController = class AnswerWeatherController {
     }
 };
 __decorate([
-    (0, common_1.Get)(),
-    openapi.ApiResponse({ status: 200, type: String }),
+    (0, common_1.Get)('/'),
+    openapi.ApiResponse({ status: 200 }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
