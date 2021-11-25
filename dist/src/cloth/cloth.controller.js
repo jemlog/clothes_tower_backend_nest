@@ -18,7 +18,6 @@ const updateCloth_dto_1 = require("./dto/updateCloth.dto");
 const createCloth_dto_1 = require("./dto/createCloth.dto");
 const common_1 = require("@nestjs/common");
 const cloth_service_1 = require("./cloth.service");
-const platform_express_1 = require("@nestjs/platform-express");
 const cloth_entity_1 = require("./domain/cloth.entity");
 const dotenv = require("dotenv");
 const swagger_1 = require("@nestjs/swagger");
@@ -37,8 +36,8 @@ let ClothController = class ClothController {
     getClothById(id) {
         return this.clothService.getClothById(id);
     }
-    createCloth(file, createClothDto) {
-        return this.clothService.createCloth(createClothDto, file);
+    createCloth(createClothDto) {
+        return this.clothService.createCloth(createClothDto);
     }
     updateCloth(id, updateClothDto) {
         return this.clothService.updateCloth(id, updateClothDto);
@@ -92,22 +91,12 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ClothController.prototype, "getClothById", null);
 __decorate([
-    (0, swagger_1.ApiCreatedResponse)({
-        description: 'cloth is successfully created',
-        type: [cloth_entity_1.Cloth],
-    }),
-    (0, swagger_1.ApiOperation)({
-        summary: '새 옷 추가',
-        description: '새로운 옷을 옷장에 집어넣는다. 이미지 파일 받아온 후 AWS S3에 저장',
-    }),
     (0, common_1.Post)(),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file')),
     (0, common_1.UsePipes)(common_1.ValidationPipe),
     openapi.ApiResponse({ status: 201, type: require("./domain/cloth.entity").Cloth }),
-    __param(0, (0, common_1.UploadedFile)()),
-    __param(1, (0, common_1.Body)()),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, createCloth_dto_1.CreateClothDto]),
+    __metadata("design:paramtypes", [createCloth_dto_1.CreateClothDto]),
     __metadata("design:returntype", void 0)
 ], ClothController.prototype, "createCloth", null);
 __decorate([

@@ -79,20 +79,27 @@ export class ClothController {
     return this.clothService.getClothById(id);
   }
 
-  @ApiCreatedResponse({
-    description: 'cloth is successfully created',
-    type: [Cloth],
-  })
-  @ApiOperation({
-    summary: '새 옷 추가',
-    description:
-      '새로운 옷을 옷장에 집어넣는다. 이미지 파일 받아온 후 AWS S3에 저장',
-  })
+  // @ApiCreatedResponse({
+  //   description: 'cloth is successfully created',
+  //   type: [Cloth],
+  // })
+  // @ApiOperation({
+  //   summary: '새 옷 추가',
+  //   description:
+  //     '새로운 옷을 옷장에 집어넣는다. 이미지 파일 받아온 후 AWS S3에 저장',
+  // })
+
+  // @UseInterceptors(FileInterceptor('file'))
   @Post()
-  @UseInterceptors(FileInterceptor('file'))
   @UsePipes(ValidationPipe)
-  createCloth(@UploadedFile() file, @Body() createClothDto: CreateClothDto) {
-    return this.clothService.createCloth(createClothDto, file);
+  createCloth(
+    // @UploadedFile() file,
+    @Body() createClothDto: CreateClothDto,
+  ) {
+    return this.clothService.createCloth(
+      createClothDto,
+      // ,file
+    );
   }
 
   @ApiOperation({ summary: '옷 정보 수정' })

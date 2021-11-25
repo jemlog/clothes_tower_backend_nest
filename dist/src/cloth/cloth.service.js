@@ -28,22 +28,6 @@ let ClothService = class ClothService {
         this.clothRepository = clothRepository;
         this.connection = connection;
     }
-    async uploadS3(file, bucket, name) {
-        const s3 = new AWS.S3();
-        const params = {
-            Bucket: bucket,
-            Key: String(name),
-            Body: file,
-        };
-        return new Promise((resolve, reject) => {
-            s3.upload(params, (err, data) => {
-                if (err) {
-                    reject(err.message);
-                }
-                resolve(data);
-            });
-        });
-    }
     async getAllClothes() {
         const clothes = await this.clothRepository.find();
         return clothes;
@@ -55,18 +39,15 @@ let ClothService = class ClothService {
         }
         return result;
     }
-    async createCloth(cloth, file) {
+    async createCloth(cloth) {
         const { top_bottom, short_long, color, material } = cloth;
-        const { originalname } = file;
-        const bucketS3 = process.env.AWS_S3_BUCKET_NAME;
         try {
-            const file2 = await this.uploadS3(file.buffer, bucketS3, originalname);
             const newCloth = this.clothRepository.create({
                 top_bottom,
                 short_long,
                 color,
                 material,
-                image: file2.Location,
+                image: 'default',
             });
             const cloth = await this.clothRepository.save(newCloth);
             return cloth;
