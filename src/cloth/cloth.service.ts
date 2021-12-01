@@ -25,22 +25,22 @@ export class ClothService {
   ) {}
 
   // 이미지 파일을 받아오면 S3의 버켓으로 전송하는 로직
-  // async uploadS3(file, bucket, name) {
-  //   const s3 = new AWS.S3();
-  //   const params = {
-  //     Bucket: bucket,
-  //     Key: String(name),
-  //     Body: file,
-  //   };
-  //   return new Promise((resolve, reject) => {
-  //     s3.upload(params, (err, data) => {
-  //       if (err) {
-  //         reject(err.message);
-  //       }
-  //       resolve(data);
-  //     });
-  //   });
-  // }
+  async uploadS3(file, bucket, name) {
+    const s3 = new AWS.S3();
+    const params = {
+      Bucket: bucket,
+      Key: String(name),
+      Body: file,
+    };
+    return new Promise((resolve, reject) => {
+      s3.upload(params, (err, data) => {
+        if (err) {
+          reject(err.message);
+        }
+        resolve(data);
+      });
+    });
+  }
 
   // 옷장 안의 모든 옷 조회
   async getAllClothes(): Promise<Cloth[]> {
@@ -58,21 +58,18 @@ export class ClothService {
   }
 
   // 새로운 옷을 옷장에 추가
-  async createCloth(
-    cloth: CreateClothDto,
-    // , file
-  ) {
+  async createCloth(cloth: CreateClothDto, file) {
     const { top_bottom, short_long, color, material } = cloth;
-    // const { originalname } = file;
-    // const bucketS3 = process.env.AWS_S3_BUCKET_NAME;
+    const { originalname } = file;
+    const bucketS3 = process.env.AWS_S3_BUCKET_NAME;
 
     try {
-      // // 클라이언트에서 보낸 formdata 내부의 이미지 파일을 가져오는 로직
-      // const file2: any = await this.uploadS3(
-      //   file.buffer,
-      //   bucketS3,
-      //   originalname,
-      // );
+      // 클라이언트에서 보낸 formdata 내부의 이미지 파일을 가져오는 로직
+      const file2: any = await this.uploadS3(
+        file.buffer,
+        bucketS3,
+        originalname,
+      );
 
       // 이미지 파일 외의 key ,value 쌍을 가져오는 로직
       const newCloth = this.clothRepository.create({
